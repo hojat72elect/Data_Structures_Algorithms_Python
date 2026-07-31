@@ -1,4 +1,4 @@
-from typing import Generic, TypeVar, Optional
+from typing import Generic, TypeVar, Optional, Generator
 
 T = TypeVar("T")  # generic type
 
@@ -78,3 +78,17 @@ class SinglyLinkedList(Generic[T]):
             self.tail = None
 
         return result
+
+    def __iter__(self) -> Generator[T, None, None]:
+        """Support iteration over values directly (e.g., in `for x in list`)."""
+        current_node = self.head
+        while current_node:
+            yield current_node.data
+            current_node = current_node.next
+
+    def __len__(self)-> int:
+        return self._size
+
+    def __str__(self) -> str:
+        elements = [str(val) for val in self]
+        return " -> ".join(elements) + " -> None" if elements else "Empty List"
