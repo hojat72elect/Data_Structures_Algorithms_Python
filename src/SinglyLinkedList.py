@@ -63,6 +63,9 @@ class SinglyLinkedList(Generic[T]):
         self._size += 1
 
     def delete_head(self) -> T:
+        """
+        Deletes and returns the head's content.
+        """
         if not self.head:
             raise IndexError("The list is empty")
 
