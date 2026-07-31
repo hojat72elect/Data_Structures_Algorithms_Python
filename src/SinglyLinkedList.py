@@ -62,4 +62,16 @@ class SinglyLinkedList(Generic[T]):
         current_node.next = new_node
         self._size += 1
 
-    
+    def delete_head(self) -> T:
+        if not self.head:
+            raise IndexError("The list is empty")
+
+        result = self.head.data
+        self.head = self.head.next
+        self._size -= 1
+
+        if self.head is None:
+            # the list only had 1 item, tail should be updated as well
+            self.tail = None
+
+        return result
