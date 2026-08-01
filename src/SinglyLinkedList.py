@@ -79,6 +79,30 @@ class SinglyLinkedList(Generic[T]):
 
         return result
 
+    def delete_tail(self) -> T:
+        """
+        Deletes and returns the tail's content.
+        """
+        if not self.head or not self.tail:
+            raise IndexError("The list is empty")
+
+        result = self.tail.data
+
+        if self._size == 1:
+            self.head = None
+            self.tail = None
+        else:
+            current_node = self.head
+            while current_node.next is not self.tail:
+                current_node = current_node.next
+
+            # At this point, the current_node is the node before the tail
+            current_node.next = None
+            self.tail = current_node
+
+        self._size -= 1
+        return result
+
     def __iter__(self) -> Generator[T, None, None]:
         """Support iteration over values directly (e.g., in `for x in list`)."""
         current_node = self.head
