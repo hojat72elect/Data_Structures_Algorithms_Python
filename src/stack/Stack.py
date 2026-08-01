@@ -1,6 +1,6 @@
 from typing import TypeVar, Generic
 
-from linked_list.SinglyLinkedList import SinglyLinkedList
+from src.linked_list.SinglyLinkedList import SinglyLinkedList
 
 T = TypeVar("T")
 
