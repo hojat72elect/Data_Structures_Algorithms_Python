@@ -1,4 +1,4 @@
-from src.SinglyLinkedList import Node, SinglyLinkedList
+from src.linked_list.SinglyLinkedList import Node, SinglyLinkedList
 
 
 class TestNode:

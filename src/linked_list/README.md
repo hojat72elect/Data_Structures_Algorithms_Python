@@ -5,7 +5,7 @@ memory. Instead, each element points to the next.
 A drawback of linked lists is that access time is linear. Faster access, such as random access, is not feasible. Arrays
 have better cache locality as compared to linked lists.
 
-![Linked List](../assets/linked-list.jpeg)
+![Linked List](../../assets/linked-list.jpeg)
 
 ## Complexities
 
