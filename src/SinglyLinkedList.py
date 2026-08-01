@@ -4,18 +4,18 @@ T = TypeVar("T")  # generic type
 
 
 class Node(Generic[T]):
-    def __init__(self, data: T) -> None:
+    def __init__(self, data: T):
         self.data: T = data
         self.next: Optional["Node[T]"] = None
 
 
 class SinglyLinkedList(Generic[T]):
-    def __init__(self) -> None:
+    def __init__(self):
         self.head: Optional[Node[T]] = None
         self.tail: Optional[Node[T]] = None
         self._size: int = 0
 
-    def append(self, data: T) -> None:
+    def append(self, data: T):
         new_node = Node(data)
 
         if not self.head:
@@ -28,7 +28,7 @@ class SinglyLinkedList(Generic[T]):
 
         self._size += 1
 
-    def prepend(self, data: T) -> None:
+    def prepend(self, data: T):
         new_node = Node(data)
 
         if not self.head:
@@ -41,7 +41,7 @@ class SinglyLinkedList(Generic[T]):
 
         self._size += 1
 
-    def insert(self, index: int, data: T) -> None:
+    def insert(self, index: int, data: T):
         if index < 0 or index > self._size:
             raise IndexError("Index out of bounds")
 
@@ -86,7 +86,7 @@ class SinglyLinkedList(Generic[T]):
             yield current_node.data
             current_node = current_node.next
 
-    def __len__(self)-> int:
+    def __len__(self) -> int:
         return self._size
 
     def __str__(self) -> str:
