@@ -12,8 +12,8 @@ class DoubleNode(Generic[T]):
 
 class DoublyLinkedList(Generic[T]):
     def __init__(self):
-        self.head = Optional[DoubleNode[T]] = None
-        self.tail = Optional[DoubleNode[T]] = None
+        self.head: Optional[DoubleNode[T]] = None
+        self.tail: Optional[DoubleNode[T]] = None
         self._size: int = 0
 
     def append(self, data: T):

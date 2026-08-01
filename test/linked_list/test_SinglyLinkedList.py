@@ -3,9 +3,9 @@ from src.linked_list.SinglyLinkedList import Node, SinglyLinkedList
 
 class TestNode:
     def test_node_initialization(self):
-        node = Node(19)
-        assert node.data == 19
-        assert node.next is None
+        sut = Node(19)
+        assert sut.data == 19
+        assert sut.next is None
 
 
 class TestSinglyLinkedList:
